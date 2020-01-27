@@ -1,5 +1,0 @@
-﻿  Source.cpp
-c:\users\илья\documents\imageprocessing\imageprocessing\source.cpp(73): warning C4018: '<': signed/unsigned mismatch
-c:\users\илья\documents\imageprocessing\imageprocessing\source.cpp(105): warning C4018: '>': signed/unsigned mismatch
-c:\users\илья\documents\imageprocessing\imageprocessing\source.cpp(126): warning C4715: 'bmpFile::writeFile': not all control paths return a value
-  ImageProcessing.vcxproj -> C:\Users\илья\Documents\ImageProcessing\Debug\ImageProcessing.exe
