@@ -1,5 +1,9 @@
 from numpy import zeros, linspace, sin, cos, pi
 
+# Hough transform for finding straight lines on the image
+# Lines is represented by two parameters: 
+# r - distance from origin to the closest point on line 
+# theta - angle between x axis and line that connects origin and that closest point
 # Recieves:
 #  numpy array matrix of float or int to be transformed
 #  float or int treshold value for ignoring the values that less than treshold
