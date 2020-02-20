@@ -30,12 +30,13 @@ struct bmpInfoHeader
 	//26 + 28 = 54 bytes
 };
 
+//handles .bmp files with colors > 8
 struct bmpFile
 {
 	bmpHeader header;
 	bmpInfoHeader infoHeader;
 	uint8_t* palette;
-	uint8_t** data;
+	uint8_t*** data;
 
 	bool readFile(const char* fileName)
 	{
@@ -51,25 +52,37 @@ struct bmpFile
 			}
 			inFile.read((char*)&infoHeader, sizeof(bmpInfoHeader));
 			inFile.seekg(header.offset);
-			if (infoHeader.bpp <= 8)
-			{
-				palette = new uint8_t[4 * infoHeader.colors_used];
-				for (int i = 0; i < 4 * infoHeader.colors_used; i++)
-					inFile.read((char*)palette[i], sizeof(char));
-			}
+
 			int height = abs(infoHeader.height);
-			int width = infoHeader.width * infoHeader.bpp / 8;
-			int padding = 4 - (width % 4);
-			width += padding;
+			int width = infoHeader.width;
+			int colors = infoHeader.bpp / 8;
+			int padding = 4 - (width*colors % 4);
+			//width += padding;
 
-			data = new uint8_t*[height];
+			data = new uint8_t**[height];
 			for (int i = 0; i < height; i++)
-				data[i] = new uint8_t[width];
-
+			{
+				data[i] = new uint8_t*[width];
+				for (int j = 0; j < colors; j++)
+				{
+					data[i][j] = new uint8_t[colors];
+				}
+			}
+				
 			for (int i = 0; i < height; i++)
 			{
 				for (int j = 0; j < width; j++)
-					inFile.read((char*)&data[i][j], 1);
+				{
+					for (int k = 0; k < colors; k++)
+					{
+						inFile.read((char*)&data[i][j][k], 1);
+					}
+				}
+				for (int k = 0; k < padding; k++)
+				{
+					char buffer;
+					inFile.read(&buffer, 1);
+				}
 			}
 
 			inFile.close();
@@ -95,15 +108,24 @@ struct bmpFile
 					outFile.write((char*)palette[i], sizeof(char));
 			}
 			int height = abs(infoHeader.height);
-			int width = infoHeader.width * infoHeader.bpp / 8;
-			int padding = 4 - (width % 4);
-			width += padding;
+			int width = infoHeader.width;
+			int colors = infoHeader.bpp / 8;
+			int padding = 4 - (width*colors % 4);
+			//width += padding;
 
 			for (int i = 0; i < height; i++)
 			{
 				for (int j = 0; j < width; j++)
 				{
-					outFile.write((char*)&data[i][j], 1);
+					for (int k = 0; k < colors; k++)
+					{
+						outFile.write((char*)&data[i][j][k], 1);
+					}
+				}
+				for (int k = 0; k < padding; k++)
+				{
+					uint8_t null = 0;
+					outFile.write((char*)&null, 1);
 				}
 			}
 		}

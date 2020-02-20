@@ -1,11 +1,4 @@
-﻿  BmpHandler.cpp
-c:\users\илья\documents\imageprocessing\bmphandlercppscr\bmphandler.cpp(57): warning C4018: '<': signed/unsigned mismatch
-c:\users\илья\documents\imageprocessing\bmphandlercppscr\bmphandler.cpp(94): warning C4018: '>': signed/unsigned mismatch
-  filtering.cpp
-  misc.cpp
-  Main.cpp
-c:\users\илья\documents\imageprocessing\bmphandlercppscr\bmphandler.cpp(57): warning C4018: '<': signed/unsigned mismatch
-c:\users\илья\documents\imageprocessing\bmphandlercppscr\bmphandler.cpp(94): warning C4018: '>': signed/unsigned mismatch
-  Generating Code...
-c:\users\илья\documents\imageprocessing\bmphandlercppscr\bmphandler.cpp(112): warning C4715: 'bmpFile::writeFile': not all control paths return a value
+﻿  Main.cpp
+c:\users\илья\documents\imageprocessing\bmphandlercppscr\bmphandler.cpp(107): warning C4018: '>': signed/unsigned mismatch
+c:\users\илья\documents\imageprocessing\bmphandlercppscr\bmphandler.cpp(134): warning C4715: 'bmpFile::writeFile': not all control paths return a value
   ImageProcessing.vcxproj -> C:\Users\илья\Documents\ImageProcessing\SolutionCpp\x64\Debug\ImageProcessing.exe
