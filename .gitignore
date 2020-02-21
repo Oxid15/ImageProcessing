@@ -31,9 +31,6 @@
 *.out
 *.app
 
-SolutionCpp/
-
-
 *.db
 
 *.ipch
