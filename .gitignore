@@ -32,3 +32,15 @@
 *.app
 
 SolutionCpp/.vs/ImageProcessing/v15/
+
+SolutionCpp/ImageProcessing/x64/Debug/
+
+*.db
+
+*.ipch
+
+*.ilk
+
+*.pdb
+
+SolutionCpp/Main.cpp
