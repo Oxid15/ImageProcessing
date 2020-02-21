@@ -56,14 +56,14 @@ struct bmpFile
 			int height = abs(infoHeader.height);
 			int width = infoHeader.width;
 			int colors = infoHeader.bpp / 8;
-			int padding = 4 - (width*colors % 4);
-			//width += padding;
+			//int padding = 4 - (width*colors % 4);
+			int padding = (width*colors % 4);
 
 			data = new uint8_t**[height];
 			for (int i = 0; i < height; i++)
 			{
 				data[i] = new uint8_t*[width];
-				for (int j = 0; j < colors; j++)
+				for (int j = 0; j < width; j++)
 				{
 					data[i][j] = new uint8_t[colors];
 				}
@@ -104,14 +104,14 @@ struct bmpFile
 			if (infoHeader.bpp <= 8)
 			{
 				palette = new uint8_t[4 * infoHeader.colors_used];
-				for (int i = 0; i > 4 * infoHeader.colors_used; i++)
+				for (uint32_t i = 0; i > 4 * infoHeader.colors_used; i++)
 					outFile.write((char*)palette[i], sizeof(char));
 			}
 			int height = abs(infoHeader.height);
 			int width = infoHeader.width;
 			int colors = infoHeader.bpp / 8;
-			int padding = 4 - (width*colors % 4);
-			//width += padding;
+			//int padding = 4 - (width*colors % 4);
+			int padding = (width*colors % 4);
 
 			for (int i = 0; i < height; i++)
 			{
@@ -128,6 +128,7 @@ struct bmpFile
 					outFile.write((char*)&null, 1);
 				}
 			}
+			return true;
 		}
 		else
 			return false;
