@@ -31,9 +31,8 @@
 *.out
 *.app
 
-SolutionCpp/.vs/ImageProcessing/v15/
+SolutionCpp/
 
-SolutionCpp/ImageProcessing/x64/Debug/
 
 *.db
 
