@@ -1,2 +1,2 @@
 # ImageProcessing
-Code for image processing and computer vision tasks
+C++ and Python 3.6 source code for image processing and computer vision tasks
