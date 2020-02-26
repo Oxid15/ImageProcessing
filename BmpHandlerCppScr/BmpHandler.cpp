@@ -56,7 +56,6 @@ struct bmpFile
 			int height = abs(infoHeader.height);
 			int width = infoHeader.width;
 			int colors = infoHeader.bpp / 8;
-			//int padding = 4 - (width*colors % 4);
 			int padding = (width*colors % 4);
 
 			data = new uint8_t**[height];
@@ -110,7 +109,6 @@ struct bmpFile
 			int height = abs(infoHeader.height);
 			int width = infoHeader.width;
 			int colors = infoHeader.bpp / 8;
-			//int padding = 4 - (width*colors % 4);
 			int padding = (width*colors % 4);
 
 			for (int i = 0; i < height; i++)

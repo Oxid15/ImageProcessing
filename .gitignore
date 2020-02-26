@@ -40,3 +40,21 @@
 *.pdb
 
 SolutionCpp/Main.cpp
+
+SolutionCpp/.vs/BmpHandler/v15/.suo
+
+*.idb
+
+*.tlog
+
+*.sln
+
+*.log
+
+*.vcxproj
+
+*.filters
+
+*.user
+
+SolutionCpp/.vs/ImageProcessing/v15/.suo

@@ -27,7 +27,7 @@ T percentile(T* data, int size, float percentile)// implements sorting in place;
 		if (percentile >= 0 and percentile <= 1)
 		{
 			insertionSort(data, size);
-			int idx = int(size*percentile);
+			int idx = int(size*percentile) - 1;
 			return idx >= size ? data[size - 1] : data[idx];
 		}
 		else
