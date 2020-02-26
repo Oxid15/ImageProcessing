@@ -39,6 +39,8 @@
 
 *.pdb
 
+.vscode/
+
 SolutionCpp/
 
 SolutionCpp/.vs/BmpHandler/v15/.suo
