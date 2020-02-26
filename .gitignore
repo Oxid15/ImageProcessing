@@ -39,7 +39,7 @@
 
 *.pdb
 
-SolutionCpp/Main.cpp
+SolutionCpp/
 
 SolutionCpp/.vs/BmpHandler/v15/.suo
 
