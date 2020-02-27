@@ -109,6 +109,7 @@ public:
 				}
 			}
 			out[i][j][c] = percentile(kernel, r, perc);
+			delete kernel;
 		}
 	}
 };
