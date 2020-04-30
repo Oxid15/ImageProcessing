@@ -7,7 +7,7 @@ class Kernel
 {
 public:
 	Kernel() {};
-	virtual void operator()(T*** src, T*** out, uint32_t height, uint32_t width, uint8_t colors, uint32_t i, uint32_t j) {};
+	virtual void operator()(T*** src, T*** out, uint32_t height, uint32_t width, uint32_t colors, uint32_t i, uint32_t j) {};
 };
 
 //class for kernels with constant weights
@@ -33,7 +33,7 @@ public:
 		kernelY = _kernelY;
 	}
 
-	void operator()(T*** src, T*** out, uint32_t height, uint32_t width, uint8_t colors, uint32_t i, uint32_t j)
+	void operator()(T*** src, T*** out, uint32_t height, uint32_t width, uint32_t colors, uint32_t i, uint32_t j)
 	{
 		//for each color plane do the filtering
 		for (uint8_t c = 0; c < colors; c++)
@@ -86,7 +86,7 @@ public:
 		kernelY = _kernelY;
 	}
 
-	void operator()(T*** src, T*** out, uint32_t width, uint32_t height, uint8_t colors, uint32_t i, uint32_t j)
+	void operator()(T*** src, T*** out, uint32_t width, uint32_t height, uint32_t colors, uint32_t i, uint32_t j)
 	{
 		//for each color plane do the filtering
 		for (uint8_t c = 0; c < colors; c++)
@@ -125,7 +125,7 @@ public:
 		kernel = _kernel;
 	}
 
-	void operator()(T*** src, T*** out, uint32_t height, uint32_t width, uint8_t colors)
+	void operator()(T*** src, T*** out, uint32_t height, uint32_t width, uint32_t colors)
 	{
 		for (uint32_t i = 0; i < height; i++)
 			for (uint32_t j = 0; j < width; j++)
