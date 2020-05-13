@@ -36,7 +36,7 @@ public:
 	void operator()(T*** src, T*** out, uint32_t height, uint32_t width, uint32_t colors, uint32_t i, uint32_t j)
 	{
 		//for each color plane do the filtering
-		for (uint8_t c = 0; c < colors; c++)
+		for (uint32_t c = 0; c < colors; c++)
 		{
 			int up = i - kernelY / 2;
 			int left = j - kernelX / 2;
