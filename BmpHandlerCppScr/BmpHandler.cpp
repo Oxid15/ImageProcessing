@@ -1,5 +1,4 @@
 #pragma pack(push, 2)
-#include <iostream>
 #include <fstream>
 
 struct bmpHeader
@@ -65,6 +64,8 @@ struct bmpFile
 				for (int j = 0; j < width; j++)
 				{
 					data[i][j] = new uint8_t[colors];
+					for (int c = 0; c < colors; c++)
+						data[i][j][c] = 0;
 				}
 			}
 				
@@ -131,5 +132,15 @@ struct bmpFile
 		else
 			return false;
 	}
+	
+	//~bmpFile()
+	//{
+	//	for (int i = 0; i < infoHeader.height; i++)
+	//		for (int j = 0; j < infoHeader.width; j++)
+	//			delete data[i][j];
+	//	for (int i = 0; i < infoHeader.height; i++)
+	//		delete data[i];
+	//	delete data;
+	//}
 };
 #pragma pack (pop)
